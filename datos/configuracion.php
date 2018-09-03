@@ -10,8 +10,8 @@ define("PUERTO_BD", "5432");
 define("NOMBRE_BD", "d8in90ck27ji1a");
 */
 
-define("SERVIDOR_BD", "ec2-174-129-22-84.compute-1.amazonaws.com");
-define("USUARIO_BD", "ibcoblediyvudj");
-define("CLAVE_BD", "94e2248952b9f9ff910151219b34d058faaeacb08a3c6da77ae8ca62d6f7adce");
+define("SERVIDOR_BD", "ec2-54-227-244-12.compute-1.amazonaws.com");
+define("USUARIO_BD", "ddsbuyejiluwfb");
+define("CLAVE_BD", "65c4dcf0f253f4568c609dabb8fa7325d21bdb5336f2281d7a492fdb7516d88f");
 define("PUERTO_BD", "5432");
-define("NOMBRE_BD", "dbg8shkqtus9hp");
+define("NOMBRE_BD", "d4upkssb7iaqr1");
