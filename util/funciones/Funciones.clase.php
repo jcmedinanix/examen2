@@ -4,7 +4,9 @@ require_once 'json.hpack.php';
 
 class Funciones {
     
-    public static $DIRECCION_WEB_SERVICE = "https://examenandroid.herokuapp.com/serviciosweb/";
+    //public static $DIRECCION_WEB_SERVICE = "https://examenandroid.herokuapp.com/serviciosweb/";
+    public static $DIRECCION_WEB_SERVICE = "https://examen2medina.herokuapp.com/serviciosweb/";
+  
     public static function mensaje($mensaje, $tipo, $archivoDestino="", $tiempo=0) {
         $estiloMensaje = "";
 
