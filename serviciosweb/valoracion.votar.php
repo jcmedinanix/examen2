@@ -22,7 +22,13 @@ try {
         $objV->setCodigoArticulo($codigoArticulo);
         $objV->setCodigoUsuario($codigoUsuario);
         $objV->setValor($valor);
-        $resultado = $objV->regitrarVotacion();
+
+        $resultado1 = $objV->nrodeRegistros();
+        if($resultado1[total]==0){
+              $resultado = $objV->regitrarVotacion();
+            }else{
+              $resultado = $objV->actualizarVotacion();  
+            }
         if($resultado){
             Funciones::imprimeJSON(200, "Gracias por tu voto.", "");
         }else{
