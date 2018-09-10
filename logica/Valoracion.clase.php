@@ -95,7 +95,7 @@ class Valoracion extends Conexion {
     try{
      
             $sql = "
-                    select  valor  as total              
+                    select  count(valor)  as total              
                 from
                     valoracion                    
     where codigo_articulo=:p_codigo_articulo AND codigo_usuario=:p_codigo_usuario
