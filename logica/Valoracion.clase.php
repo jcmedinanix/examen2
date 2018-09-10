@@ -68,6 +68,48 @@ class Valoracion extends Conexion {
         
     }
     
+    //actualizar votacion
 
+    public function actualizarVotacion() {
+        $respuesta=0;
+        try {
+           $sql = "UPDATE valoracion SET                    
+                    valor=:p_valor
+                    WHERE codigo_articulo=:p_codigo_articulo AND codigo_usuario=:p_codigo_usuario
+                     ";
+           
+           $sentencia = $this->dblink->prepare($sql);
+           $sentencia->bindParam(":p_codigo_usuario", $this->getCodigoUsuario());
+           $sentencia->bindParam(":p_codigo_articulo", $this->getCodigoArticulo());
+           $sentencia->bindParam(":p_valor", $this->getValor());
+           $respuesta = $sentencia->execute();       
+           return $respuesta;
+       } catch (Exception $exc) {
+           throw $exc;
+           
+       }
+        
+    }
+
+     public function nrodeRegistros() {
+    try{
+     
+            $sql = "
+                    select  valor  as total              
+                from
+                    valoracion                    
+    where codigo_articulo=:p_codigo_articulo AND codigo_usuario=:p_codigo_usuario
+                ";
+            //suba otra vez este archivo
+            $sentencia = $this->dblink->prepare($sql);
+            $sentencia->bindParam(":p_codigo_usuario", $this->getCodigoUsuario());
+            $sentencia->bindParam(":p_codigo_articulo", $this->getCodigoArticulo());
+            $respuesta=$sentencia->execute();
+            $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        } catch (Exception $exc) {
+            throw $exc;
+        }
+    }
 
 }
