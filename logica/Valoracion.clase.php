@@ -79,8 +79,8 @@ class Valoracion extends Conexion {
                      ";
            
            $sentencia = $this->dblink->prepare($sql);
-           $sentencia->bindParam(":p_codigo_usuario", $this->getCodigoUsuario());
            $sentencia->bindParam(":p_codigo_articulo", $this->getCodigoArticulo());
+           $sentencia->bindParam(":p_codigo_usuario", $this->getCodigoUsuario());
            $sentencia->bindParam(":p_valor", $this->getValor());
            $respuesta = $sentencia->execute();       
            return $respuesta;
@@ -94,7 +94,7 @@ class Valoracion extends Conexion {
      public function nrodeRegistros() {
     try{
      
-            $sql = "SELECT  count(valor)  as total              
+            $sql = "SELECT  valor              
                 from
                     valoracion                    
     where codigo_articulo=:p_codigo_articulo AND codigo_usuario=:p_codigo_usuario
