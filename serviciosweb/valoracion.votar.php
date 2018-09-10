@@ -23,8 +23,8 @@ try {
         $objV->setCodigoUsuario($codigoUsuario);
         $objV->setValor($valor);
 
-        $resultado1 = $objV->nrodeRegistros();
-        $registros=$resultado1["total"];
+        $resultado = $objV->nrodeRegistros();
+        $registros=$resultado["total"];
         if($registros==0){
               $resultado = $objV->regitrarVotacion();
             }else{
