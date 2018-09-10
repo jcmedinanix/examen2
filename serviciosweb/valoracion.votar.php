@@ -31,7 +31,7 @@ try {
               $resultado = $objV->actualizarVotacion();  
             }
         if($resultado){
-            Funciones::imprimeJSON(200, "Gracias por tu voto." . $registros, "");
+            Funciones::imprimeJSON(200, "Gracias por tu voto." . $registros . " y resultado es ". $resultado["valor"] , "");
         }else{
             Funciones::imprimeJSON(500, "Error en la votación, intentalo más tarde.", "");
         }
