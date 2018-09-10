@@ -24,13 +24,14 @@ try {
         $objV->setValor($valor);
 
         $resultado1 = $objV->nrodeRegistros();
-        if($resultado1["total"]==0){
+        $registros=$resultado1["total"];
+        if($registros==0){
               $resultado = $objV->regitrarVotacion();
             }else{
               $resultado = $objV->actualizarVotacion();  
             }
         if($resultado){
-            Funciones::imprimeJSON(200, "Gracias por tu voto." . $resultado1["total"], "");
+            Funciones::imprimeJSON(200, "Gracias por tu voto." . $registros, "");
         }else{
             Funciones::imprimeJSON(500, "Error en la votación, intentalo más tarde.", "");
         }
