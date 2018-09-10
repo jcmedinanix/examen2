@@ -30,7 +30,7 @@ try {
               $resultado = $objV->actualizarVotacion();  
             }
         if($resultado){
-            Funciones::imprimeJSON(200, "Gracias por tu voto.", "");
+            Funciones::imprimeJSON(200, "Gracias por tu voto." . $resultado, "");
         }else{
             Funciones::imprimeJSON(500, "Error en la votación, intentalo más tarde.", "");
         }
