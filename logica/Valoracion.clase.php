@@ -74,7 +74,7 @@ class Valoracion extends Conexion {
         $respuesta=0;
         try {
            $sql = "UPDATE valoracion SET                    
-                    valor=:p_valor
+                    valor=valor + :p_valor
                     WHERE codigo_articulo=:p_codigo_articulo AND codigo_usuario=:p_codigo_usuario
                      ";
            
@@ -94,8 +94,7 @@ class Valoracion extends Conexion {
      public function nrodeRegistros() {
     try{
      
-            $sql = "
-                    select  count(valor)  as total              
+            $sql = "SELECT  count(valor)  as total              
                 from
                     valoracion                    
     where codigo_articulo=:p_codigo_articulo AND codigo_usuario=:p_codigo_usuario
