@@ -24,7 +24,7 @@ try {
         $objV->setValor($valor);
 
         $resultado = $objV->nrodeRegistros();
-        $registros=$resultado["total"];
+        $registros=count($resultado["valor"]);
         if($registros==0){
               $resultado = $objV->regitrarVotacion();
             }else{
