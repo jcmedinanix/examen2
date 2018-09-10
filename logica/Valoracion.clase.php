@@ -103,7 +103,7 @@ class Valoracion extends Conexion {
             $sentencia = $this->dblink->prepare($sql);
             $sentencia->bindParam(":p_codigo_usuario", $this->getCodigoUsuario());
             $sentencia->bindParam(":p_codigo_articulo", $this->getCodigoArticulo());
-            $respuesta=$sentencia->execute();
+            $sentencia->execute();
             $resultado = $sentencia->fetchAll(PDO::FETCH_ASSOC);
             return $resultado;
         } catch (Exception $exc) {
